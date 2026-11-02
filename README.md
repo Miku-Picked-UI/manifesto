@@ -1,73 +1,91 @@
-[**中文版**](https://github.com/Miku-UI/manifesto/blob/Blooming_v2/READMECN.md) | [**日本語**](https://github.com/Miku-UI/manifesto/blob/Blooming_v2/READMEJP.md)
+[**中文版**](READMECN.md) | [**日本語**](READMEJP.md) *(the translations are the upstream Miku UI text)*
 
-# Miku UI Blooming V2
+# Miku-Picked UI (Android 16)
 
-![MikuUI](https://github.com/Miku-UI/manifesto/raw/Blooming_v2/img/MikuUI.webp)
+![MikuUI](img/MikuUI.webp)
 
-Miku UI is an AOSP-Based Project focus on Performance and ... 
+**Miku-Picked UI** = **Miku** UI + cherry-**picked** features.
 
-> **Miku？**
+This is the complete **Miku UI A16 (Blooming V2)**, with every Miku repository, app and feature kept,
+plus a curated set of features from **Infinity X**, **AxionOS**, **uwuAOSP** and **Evolution X**.
+It also builds **unmodified LineageOS 23.2 device trees**.
 
-**How to Start！**
+All credits are listed on the device in **Settings → About phone → Thanks to**, and below.
 
-Well...Are you a buildbot?
-
-Then, check [**Our Wiki**](https://github.com/Miku-UI/manifesto/wiki) before you start！
-
-Sync Sourcecode
-------------
-
+Sync source code
+----------------
 
 ```shell
-repo init -u https://github.com/Miku-UI/manifesto -b Blooming_v2 --git-lfs
-```
-
-
-```shell
+repo init -u https://github.com/Miku-Picked-UI/manifesto -b picked-16 --git-lfs
 repo sync -c --force-sync --no-clone-bundle --no-tags
 ```
 
-
-## Be Careful
-
-> If you are using an ify-only-Device Configuration for building Miku UI , DO NOT RELEASE IT, FOR OWN USE ONLY.
->
-> And please DO NOT Public your ify-only-Device Configuration, respect the original author, plz.
->
-> DO NOT RELEASE any build of Miku UI based on an ify-only-Device Configuration to any telegram channel or XDA Forum.
-> 
-> Bcz it's unstable with Miku UI and may lead problems!
-
-After that let's ...
-
-## Start to build！！
+Build
+-----
 
 ```shell
-# Init
 . build/envsetup.sh
 
-# Lunch
-lunch miku_[codename]-[release]-[build type]
+# Miku device trees
+lunch miku_<codename>-bp4a-userdebug
 
-# Make a diva !
-make diva
+# ...or an unmodified LineageOS 23.2 device tree
+lunch lineage_<codename>-bp4a-userdebug     # or: breakfast <codename>
+
+# Make a diva! ("m bacon" and "brunch <codename>" work too)
+m diva
 ```
 
-## GSI Building Guide
+`lineage.dependencies` files are resolved automatically (LineageOS org, `lineage-23.2`).
+Android TV and Automotive Lineage products are not supported.
 
-You can build a GSI image at any time, and as long as you haven't modified the source code, it will be identical to the GSI compiled from the official server (except for the signature)!
-
-If you want to experience the latest changes immediately, then compile it manually!
-
-The following guide is for arm64 phone, more available selections [check here](https://github.com/Miku-UI/manifesto/wiki/English-Wiki#about-gsi-build-target)
+GSI
+---
 
 ```shell
-# Init
 . build/envsetup.sh
-
-# Lunch
-lunch miku_gsi_phone_arm64-[release]-[build type]
-
-# Make GSI !
-make systemimage
+lunch miku_gsi_phone_arm64-bp4a-userdebug
+m systemimage
 ```
+
+## Picked features
+
+| Feature | From |
+|---|---|
+| Automated Sleep Mode | Evolution X |
+| Pulse music visualizer | Evolution X |
+| Extra lock screen clock styles | Evolution X |
+| Music playback progress ring | Evolution X |
+| QS tile toggle animation styles | Evolution X |
+| Custom carrier label | Evolution X |
+| Shake gestures | AxionOS |
+| Axion volume panel | AxionOS |
+| Torch on power button | AxionOS |
+| Flashlight fade | AxionOS |
+| Status/nav bar burn-in protection | AxionOS |
+| Restart SystemUI (Advanced Reboot) | AxionOS |
+| Status bar lyrics | uwuAOSP |
+| Three-finger swipe screenshot | uwuAOSP |
+| Double-tap status bar to sleep | uwuAOSP |
+| Flashlight strength | uwuAOSP |
+| SMS verification code suggestion | uwuAOSP |
+| QS header image | Infinity X |
+| Status bar logo | Infinity X |
+| Battery bar | Infinity X |
+
+## Be careful
+
+> If you build with an "ify-only" device configuration (one adapted from another ROM), do not release the build. It's for your own use only.
+> Respect the original authors of device trees.
+
+## Thanks to
+
+- [Miku UI](https://github.com/Miku-UI): the base of everything
+- [Android Open Source Project](https://source.android.com)
+- [LineageOS](https://github.com/LineageOS): HALs, device-tree conventions, the `vendor/lineage` compatibility
+- [Infinity X](https://github.com/ProjectInfinity-X)
+- [AxionOS](https://github.com/AxionAOSP)
+- [uwuAOSP](https://github.com/uwuAOSP)
+- [Evolution X](https://github.com/Evolution-X)
+- Every original author of a picked commit (authorship is kept in git history)
+- Claude (Anthropic, Claude Opus 5.5): porting and integration

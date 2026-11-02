@@ -41,6 +41,10 @@
   <project path="tools/extract-utils" name="android_tools_extract-utils" remote="lineage" />
   <project path="lineage/scripts" name="scripts" groups="tools" remote="lineage" revision="main" />
 
+  <!-- LineageOS 23.2 device-tree compatibility (Miku-Picked UI) -->
+  <project path="vendor/lineage" name="platform_vendor_lineage" remote="miku" />
+  <project path="device/lineage/sepolicy" name="platform_device_lineage_sepolicy" remote="miku" />
+
   <!-- Vendor stuff -->
   <project path="vendor/apn" name="android_vendor_apn" remote="lineage" revision="main" />
 

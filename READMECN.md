@@ -1,3 +1,5 @@
+> **Miku-Picked UI**: `repo init -u https://github.com/Miku-Picked-UI/manifesto -b picked-16 --git-lfs` (see [README.md](README.md)).
+
 # Miku UI Blooming V2
 
 ![MikuUI](https://github.com/Miku-UI/manifesto/raw/Blooming_v2/img/MikuUI.webp)
