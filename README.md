@@ -50,28 +50,22 @@ m systemimage
 
 ## Picked features
 
-| Feature | From |
-|---|---|
-| Automated Sleep Mode | Evolution X |
-| Pulse music visualizer | Evolution X |
-| Extra lock screen clock styles | Evolution X |
-| Music playback progress ring | Evolution X |
-| QS tile toggle animation styles | Evolution X |
-| Custom carrier label | Evolution X |
-| Shake gestures | AxionOS |
-| Axion volume panel | AxionOS |
-| Torch on power button | AxionOS |
-| Flashlight fade | AxionOS |
-| Status/nav bar burn-in protection | AxionOS |
-| Restart SystemUI (Advanced Reboot) | AxionOS |
-| Status bar lyrics | uwuAOSP |
-| Three-finger swipe screenshot | uwuAOSP |
-| Double-tap status bar to sleep | uwuAOSP |
-| Flashlight strength | uwuAOSP |
-| SMS verification code suggestion | uwuAOSP |
-| QS header image | Infinity X |
-| Status bar logo | Infinity X |
-| Battery bar | Infinity X |
+| Feature | From | Where to find it |
+|---|---|---|
+| Sleep mode (manual, scheduled, sunset/sunrise; QS tile) | Evolution X | Settings → Miku no Secret Stuff → Picked features |
+| QS tile toggle animations (12 styles) | Evolution X | Picked features |
+| Custom carrier label | Evolution X | Picked features |
+| Status bar logo | Infinity X | Picked features |
+| Battery bar | Infinity X | Picked features |
+| Advanced restart: recovery, bootloader, SystemUI | AxionOS (LineageOS) | Picked features |
+| Status/nav bar burn-in protection | AxionOS | automatic on devices with `config_enableBurnInProtection` |
+| Flashlight fade in/out | AxionOS | automatic on devices with adjustable torch strength |
+| 5G QS tile | AxionOS | Quick Settings edit mode |
+| Auto brightness QS tile | uwuAOSP | Quick Settings edit mode |
+| Full screen apps for display cutouts | uwuAOSP | Picked features |
+| Deep sleep time in uptime | uwuAOSP | Settings → About phone → Status |
+
+Plus **LineageOS 23.2 device tree support** (`vendor/lineage`, `lineage.dependencies`, LineageOS AIDL HAL sepolicy).
 
 ## Be careful
 
@@ -83,9 +77,10 @@ m systemimage
 - [Miku UI](https://github.com/Miku-UI): the base of everything
 - [Android Open Source Project](https://source.android.com)
 - [LineageOS](https://github.com/LineageOS): HALs, device-tree conventions, the `vendor/lineage` compatibility
-- [Infinity X](https://github.com/ProjectInfinity-X)
-- [AxionOS](https://github.com/AxionAOSP)
-- [uwuAOSP](https://github.com/uwuAOSP)
-- [Evolution X](https://github.com/Evolution-X)
+- [Infinity X](https://github.com/ProjectInfinity-X): status bar logo, battery bar
+- [AxionOS](https://github.com/AxionAOSP): burn-in protection, advanced restart with Restart SystemUI, flashlight fade, 5G tile
+- [uwuAOSP](https://github.com/uwuAOSP): deep sleep info, auto brightness tile, full screen cutout apps
+- [Evolution X](https://github.com/Evolution-X): sleep mode, QS tile animations, custom carrier label
+- crDroid, AICP, OmniROM, PixelExperience and every project those features first came from
 - Every original author of a picked commit (authorship is kept in git history)
 - Claude (Anthropic, Claude Opus 5.5): porting and integration
