@@ -7,7 +7,7 @@
 **Miku-Picked UI** = **Miku** UI + cherry-**picked** features.
 
 This is the complete **Miku UI A16 (Blooming V2)**, with every Miku repository, app and feature kept,
-plus a curated set of features from **Infinity X**, **AxionOS**, **uwuAOSP** and **Evolution X**.
+plus a curated set of features from **Infinity X**, **AxionOS**, **uwuAOSP**, **Evolution X** and **Lunaris AOSP**.
 It also builds **unmodified LineageOS 23.2 device trees**.
 
 All credits are listed on the device in **Settings → About phone → Thanks to**, and below.
@@ -64,6 +64,11 @@ m systemimage
 | Auto brightness QS tile | uwuAOSP | Quick Settings edit mode |
 | Full screen apps for display cutouts | uwuAOSP | Picked features |
 | Deep sleep time in uptime | uwuAOSP | Settings → About phone → Status |
+| Lunaris Bar (dynamic island: media, calls, timers, alarms, system events; also on the lock screen) | Lunaris AOSP | Picked features → Lunaris Bar |
+| Separate notifications and quick settings (left half / right half pull-down) | Lunaris AOSP | Picked features |
+| Landscape split shade switch | Lunaris AOSP | Picked features |
+| Screenshot flash switch, hide status bar in screenshots | Lunaris AOSP | Picked features |
+| Volume slider haptics switch | Evolution X | Picked features |
 
 Plus **LineageOS 23.2 device tree support** (`vendor/lineage`, `lineage.dependencies`, LineageOS AIDL HAL sepolicy).
 
@@ -80,7 +85,8 @@ Plus **LineageOS 23.2 device tree support** (`vendor/lineage`, `lineage.dependen
 - [Infinity X](https://github.com/ProjectInfinity-X): status bar logo, battery bar
 - [AxionOS](https://github.com/AxionAOSP): burn-in protection, advanced restart with Restart SystemUI, flashlight fade, 5G tile
 - [uwuAOSP](https://github.com/uwuAOSP): deep sleep info, auto brightness tile, full screen cutout apps
-- [Evolution X](https://github.com/Evolution-X): sleep mode, QS tile animations, custom carrier label
+- [Evolution X](https://github.com/Evolution-X): sleep mode, QS tile animations, custom carrier label, volume slider haptics switch
+- [Lunaris AOSP](https://github.com/Lunaris-AOSP): Lunaris Bar (with parts from AxionOS and PenguinOS), separate notifications/QS shade, landscape split shade switch, screenshot options
 - crDroid, AICP, OmniROM, PixelExperience and every project those features first came from
 - Every original author of a picked commit (authorship is kept in git history)
 - Claude (Anthropic, Claude Opus 5.5): porting and integration
