@@ -39,6 +39,31 @@ m diva
 `lineage.dependencies` files are resolved automatically (LineageOS org, `lineage-23.2`).
 Android TV and Automotive Lineage products are not supported.
 
+Ported devices
+--------------
+
+| Device | Codename | Device manifest | Lunch |
+|---|---|---|---|
+| Samsung Galaxy S21 Exynos (SM-G991B) | `o1s` | [`local_manifests/o1s.xml`](local_manifests/o1s.xml) | `lineage_o1s-bp4a-userdebug` |
+
+```shell
+mkdir -p .repo/local_manifests
+cp .repo/manifests/local_manifests/o1s.xml .repo/local_manifests/
+repo sync -c --force-sync --no-clone-bundle --no-tags
+. build/envsetup.sh
+lunch lineage_o1s-bp4a-userdebug
+m bacon            # MIKU_GAPPS=true m bacon for a build with Google apps
+```
+
+The o1s trees and kernel are [Macktherealonereally](https://github.com/Macktherealonereally)'s
+`lineage-23.2-20261031` release, based on the [exy2100](https://github.com/exy2100) trees, with the
+`hardware/samsung` patches of that release. Vendor blobs, `hardware/samsung`,
+`device/samsung_slsi/sepolicy` and `hardware/samsung_slsi-linaro/exynos` come from exy2100, the other
+`hardware/samsung_slsi-linaro` repos from LineageOS. Everything is forked to this org (`picked-16`).
+Not included (optional in the upstream builds): OpenEUICC (eSIM), the krazey IMS stack (VoLTE/VoWiFi),
+Aurora Store. Without lineage-sdk there is no settings UI for LiveDisplay, charging control and
+wireless fast charging.
+
 GSI
 ---
 
@@ -70,7 +95,8 @@ m systemimage
 | Screenshot flash switch, hide status bar in screenshots | Lunaris AOSP | Picked features |
 | Volume slider haptics switch | Evolution X | Picked features |
 
-Plus **LineageOS 23.2 device tree support** (`vendor/lineage`, `lineage.dependencies`, LineageOS AIDL HAL sepolicy).
+Plus **LineageOS 23.2 device tree support** (`vendor/lineage`, `lineage.dependencies`, LineageOS AIDL HAL sepolicy,
+LineageOS HAL compatibility matrix, LineageOS `wpa_supplicant_8` with Broadcom WPA3 support).
 
 ## Be careful
 
@@ -87,6 +113,9 @@ Plus **LineageOS 23.2 device tree support** (`vendor/lineage`, `lineage.dependen
 - [uwuAOSP](https://github.com/uwuAOSP): deep sleep info, auto brightness tile, full screen cutout apps
 - [Evolution X](https://github.com/Evolution-X): sleep mode, QS tile animations, custom carrier label, volume slider haptics switch
 - [Lunaris AOSP](https://github.com/Lunaris-AOSP): Lunaris Bar (with parts from AxionOS and PenguinOS), separate notifications/QS shade, landscape split shade switch, screenshot options
+- [exy2100](https://github.com/exy2100) (ata-kaner, mst8981, Flopster101): Galaxy S21 Exynos device trees, kernel, vendor and Samsung/SLSI hardware forks
+- [Macktherealonereally](https://github.com/Macktherealonereally): Galaxy S21 Exynos fixes (VoLTE, eSIM, NFC, WPA3 hotspot, 60 fps video, charge limit) and the trees/kernel used here
+- ExtremeXT and everyone on Exynos AOSP
 - crDroid, AICP, OmniROM, PixelExperience and every project those features first came from
 - Every original author of a picked commit (authorship is kept in git history)
 - Claude (Anthropic, Claude Opus 5.5): porting and integration

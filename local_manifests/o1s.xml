@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Samsung Galaxy S21 Exynos (SM-G991B, o1s) for Miku-Picked UI.
+
+  Copy to .repo/local_manifests/o1s.xml, then repo sync:
+    mkdir -p .repo/local_manifests
+    cp .repo/manifests/local_manifests/o1s.xml .repo/local_manifests/
+    repo sync -c -j$(nproc)
+    source build/envsetup.sh
+    lunch lineage_o1s-bp4a-userdebug
+    m bacon
+
+  Device trees and kernel: Macktherealonereally (release lineage-23.2-20261031),
+  based on exy2100. Vendor blobs, hardware/samsung, samsung_slsi sepolicy and
+  slsi-linaro exynos: exy2100. Other slsi-linaro repos: LineageOS.
+  All forked to github.com/Miku-Picked-UI, branch picked-16.
+-->
+<manifest>
+
+  <!-- Device, kernel and vendor -->
+  <project path="device/samsung/o1s" name="android_device_samsung_o1s" remote="miku" />
+  <project path="device/samsung/universal2100-common" name="android_device_samsung_universal2100-common" remote="miku" />
+  <project path="kernel/samsung/universal2100" name="android_kernel_samsung_universal2100" remote="miku" clone-depth="1" />
+  <project path="vendor/samsung/o1s" name="proprietary_vendor_samsung_o1s" remote="miku" clone-depth="1" />
+  <project path="vendor/samsung/universal2100-common" name="proprietary_vendor_samsung_universal2100-common" remote="miku" clone-depth="1" />
+
+  <!-- Samsung hardware -->
+  <project path="device/samsung_slsi/sepolicy" name="android_device_samsung_slsi_sepolicy" remote="miku" />
+  <project path="hardware/samsung" name="android_hardware_samsung" remote="miku" />
+
+  <!-- Samsung SLSI (Linaro) -->
+  <project path="hardware/samsung_slsi-linaro/codec2" name="android_hardware_samsung_slsi-linaro_codec2" remote="miku" />
+  <project path="hardware/samsung_slsi-linaro/config" name="android_hardware_samsung_slsi-linaro_config" remote="miku" />
+  <project path="hardware/samsung_slsi-linaro/exynos" name="android_hardware_samsung_slsi-linaro_exynos" remote="miku" />
+  <project path="hardware/samsung_slsi-linaro/exynos5" name="android_hardware_samsung_slsi-linaro_exynos5" remote="miku" />
+  <project path="hardware/samsung_slsi-linaro/graphics" name="android_hardware_samsung_slsi-linaro_graphics" remote="miku" />
+  <project path="hardware/samsung_slsi-linaro/interfaces" name="android_hardware_samsung_slsi-linaro_interfaces" remote="miku" />
+  <project path="hardware/samsung_slsi-linaro/openmax" name="android_hardware_samsung_slsi-linaro_openmax" remote="miku" />
+  <project path="hardware/samsung_slsi-linaro/sgpu" name="android_hardware_samsung_slsi-linaro_sgpu" remote="miku" />
+
+</manifest>
