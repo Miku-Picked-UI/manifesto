@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Optional: extra emoji styles from your own (private) repo, e.g. iOS emoji for personal use.
+     Not part of Miku-Picked UI. Copy to .repo/local_manifests/ to use it; a private repo needs
+     git credentials for github.com (e.g. `gh auth setup-git`).
+-->
+<manifest>
+  <remote name="emoji-extra" fetch="https://github.com/csabaikende-ctrl" />
+  <project path="vendor/emoji-extra" name="miku-picked-emoji-extra" remote="emoji-extra" revision="main" />
+</manifest>
