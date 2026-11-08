@@ -14,6 +14,8 @@
   <!-- HALs -->
   <!-- LineageOS interfaces + health V3 (IWirelessFastCharge) from exy2100 -->
   <project path="hardware/lineage/interfaces" name="android_hardware_lineage_interfaces" remote="miku" />
+  <!-- AOSP hardware/google/pixel + LineageOS kernel_headers soong namespace (no duplicate qti_*_kernel_headers with hardware/qcom-caf/common) -->
+  <project path="hardware/google/pixel" name="android_hardware_google_pixel" remote="miku" groups="generic_fs,pixel,pdk-gs-arm,pdk-gs-imgtec,pdk-desktop" />
   <project path="hardware/qcom-caf/bootctrl" name="android_hardware_qcom_bootctrl" remote="lineage" revision="lineage-23.2-caf" />
   <project path="hardware/qcom-caf/bt" name="android_hardware_qcom_bt"  remote="lineage" revision="lineage-23.2-caf" />
 
