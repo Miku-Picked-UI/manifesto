@@ -47,6 +47,7 @@
   <!-- Hardware -->
   <remove-project name="platform/hardware/interfaces" />
   <remove-project name="platform/hardware/google/pixel" />
+  <remove-project name="platform/bootable/deprecated-ota" />
   <remove-project name="platform/hardware/libhardware" />
 
   <!-- Kernel -->

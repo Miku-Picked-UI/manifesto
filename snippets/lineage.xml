@@ -14,6 +14,9 @@
   <!-- HALs -->
   <!-- LineageOS interfaces + health V3 (IWirelessFastCharge) from exy2100 -->
   <project path="hardware/lineage/interfaces" name="android_hardware_lineage_interfaces" remote="miku" />
+  <!-- AOSP bootable/deprecated-ota + LineageOS "updater: Support loading dynamic partition metadata from OTA"
+       (the OTA tools emit update_dynamic_partitions(op_list, super_empty)) -->
+  <project path="bootable/deprecated-ota" name="android_bootable_deprecated-ota" remote="miku" groups="pdk-cw" />
   <!-- AOSP hardware/google/pixel + LineageOS kernel_headers soong namespace (no duplicate qti_*_kernel_headers with hardware/qcom-caf/common) -->
   <project path="hardware/google/pixel" name="android_hardware_google_pixel" remote="miku" groups="generic_fs,pixel,pdk-gs-arm,pdk-gs-imgtec,pdk-desktop" />
   <project path="hardware/qcom-caf/bootctrl" name="android_hardware_qcom_bootctrl" remote="lineage" revision="lineage-23.2-caf" />
