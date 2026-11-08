@@ -6,6 +6,10 @@
 	   fetch="https://github.com/Miku-Picked-UI"
 	   review="https://android-review.googlesource.com/" />
 	
+  <!-- OneUisland dynamic island: hosted on the csabaikende-ctrl account, not in this org -->
+  <remote  name="oneuisland"
+	   fetch="https://github.com/csabaikende-ctrl" />
+
   <remote  name="miku-lab"
 	   revision="Cinderella"
 	   fetch="https://gitlab.com/Miku-UI" />
@@ -190,5 +194,8 @@
 	
   <!-- GAPPS -->
   <project path="vendor/gapps" name="vendor_gapps" remote="miku-lab" />
+
+  <!-- OneUisland dynamic island (built by vendor/miku/oneuisland) -->
+  <project path="vendor/miku/oneuisland/src" name="OneUisland" remote="oneuisland" revision="release-1.5.0" />
 
 </manifest>

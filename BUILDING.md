@@ -194,7 +194,8 @@ From the upstream trees (exy2100 + Macktherealonereally `lineage-23.2-20261031`)
 | `fatal: couldn't find remote ref` during sync | run `repo sync` again; if it stays, the branch is missing on GitHub, report it |
 | `error: ... is not a valid product` after `lunch` | the device manifest was not copied, or `repo sync` was not run after copying it |
 | `module "X" ... depends on undefined module "Y"` | a missing repo: report the exact message |
-| an error in `frameworks/base/packages/SystemUI` mentioning `featurepods`/`islandevents` | the Lunaris Bar port; report the error |
+| an error in `vendor/miku/oneuisland`, `OneUislandHost` or `dev.flexy.dynamicisland` | the dynamic island integration; report the error |
+| `vendor/miku/oneuisland/src` missing / `OneUisland` module has no sources | the OneUisland repo wasn't synced: run `repo sync vendor/miku/oneuisland/src` |
 
 4. Report the first error (and `build.log` if possible) by opening an issue on
    [Miku-Picked-UI/manifesto](https://github.com/Miku-Picked-UI/manifesto/issues), with the device
