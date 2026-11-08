@@ -64,6 +64,9 @@
   <remove-project name="platform/packages/modules/Permission" />
   <remove-project name="platform/packages/modules/UprobeStats" />
 
+  <!-- External: AxionOS fork (AxionFx visibility) in snippets/miku.xml -->
+  <remove-project name="platform/external/pffft" />
+
   <!-- Providers -->
   <remove-project name="platform/packages/providers/DownloadProvider" />
 
