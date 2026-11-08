@@ -12,6 +12,8 @@ It also builds **unmodified LineageOS 23.2 device trees**.
 
 All credits are listed on the device in **Settings → About phone → Thanks to**, and below.
 
+> **Full step-by-step guide (requirements, sync, build, flashing the Galaxy S21, troubleshooting): [BUILDING.md](BUILDING.md)**
+
 Sync source code
 ----------------
 
