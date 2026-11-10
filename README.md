@@ -101,7 +101,7 @@ m systemimage
 | Fingerprint icon for in-display sensors | Evolution X | Picked features → Fingerprint icon |
 | Emoji styles: Android, Blobmoji, OpenMoji, Twemoji, or your own emoji font (.ttf/.otf) | Evolution X / AxionOS | Picked features → Emoji style (restart to apply) |
 | System font picker (Miku's, now linked) | Miku UI | Picked features → Fonts |
-| AxionFx audio effects, with Miku-Picked's own Clarity, Dynamic System (bass) and Speaker optimization | AxionOS | AxionFx app, QS tile, or a music app's equalizer button |
+| AxionFx audio effects, with Clarity, and ViPER4Android's Dynamic System (bass) and Speaker optimization | AxionOS, [ViPERFX_RE](https://github.com/AndroidAudioMods/ViPERFX_RE) | AxionFx app, QS tile, or a music app's equalizer button |
 | Skip tracks with the volume keys while the screen is off (hold up = next, hold down = previous) | Miku-Picked UI (like LineageOS) | Picked features → Skip tracks with volume keys |
 | Now Bar: what's playing on the lock screen, with previous / play-pause / next | Miku-Picked UI (in the style of One UI) | Picked features → Now Bar |
 | Google spoof for wearables: apps see a Google phone, so Pixel Watch and other watch apps can pair (attestation untouched) | GoogleSpoofForWear by 73sydney, built in | Picked features → Connected devices (restart to apply) |
@@ -139,6 +139,7 @@ adb reboot
 - [Evolution X](https://github.com/Evolution-X): sleep mode, QS tile animations, custom carrier label, volume slider haptics switch, custom lockscreen clocks, fingerprint icons, emoji style switch
 - [Lunaris AOSP](https://github.com/Lunaris-AOSP): separate notifications/QS shade, landscape split shade switch, screenshot options
 - [OneUisland](https://github.com/csabaikende-ctrl/OneUisland) by Spottq, with additions by csabaikende-ctrl: the dynamic island (synced from that repository, not hosted in this org)
+- [ViPERFX_RE](https://github.com/AndroidAudioMods/ViPERFX_RE) by Iscle / AndroidAudioMods (via [WSTxda's fork](https://github.com/WSTxda/ViPERFX_RE)): ViPER4Android's Dynamic System and speaker correction in AxionFx, used with permission
 - 73sydney: GoogleSpoofForWear (Magisk module), the idea behind the Google spoof for wearables toggle
 - Blobmoji (C1710, Apache 2.0), OpenMoji (HfG Schwäbisch Gmünd, CC BY-SA 4.0), Twemoji (Twitter and contributors, CC BY 4.0): the bundled emoji styles
 - [exy2100](https://github.com/exy2100) (ata-kaner, mst8981, Flopster101): Galaxy S21 Exynos device trees, kernel, vendor and Samsung/SLSI hardware forks
