@@ -160,6 +160,14 @@ Steps:
 
 **Updates:** build again, then in recovery *Apply update* → *Apply from ADB* and sideload the new
 zip. No wipe is needed unless you switch between a build with and without Google apps.
+After the first boot of the update, clear the package cache once (local builds keep the same build
+fingerprint, so stale cached app data can make Settings and other apps crash):
+
+```shell
+adb root
+adb shell rm -rf /data/system/package_cache/*
+adb reboot
+```
 
 ## 5. What works and what doesn't on o1s
 

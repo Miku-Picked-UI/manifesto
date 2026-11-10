@@ -97,9 +97,30 @@ m systemimage
 | Landscape split shade switch | Lunaris AOSP | Picked features |
 | Screenshot flash switch, hide status bar in screenshots | Lunaris AOSP | Picked features |
 | Volume slider haptics switch | Evolution X | Picked features |
+| Custom lockscreen clocks | Evolution X | Picked features → Lockscreen clock |
+| Fingerprint icon for in-display sensors | Evolution X | Picked features → Fingerprint icon |
+| Emoji styles: Android, Blobmoji, OpenMoji, Twemoji, or your own emoji font (.ttf/.otf) | Evolution X / AxionOS | Picked features → Emoji style (restart to apply) |
+| System font picker (Miku's, now linked) | Miku UI | Picked features → Fonts |
+| AxionFx audio effects, with Miku-Picked's own Clarity, Dynamic System (bass) and Speaker optimization | AxionOS | AxionFx app, QS tile, or a music app's equalizer button |
+| Now Bar: what's playing on the lock screen, with previous / play-pause / next | Miku-Picked UI (in the style of One UI) | Picked features → Now Bar |
+| Google spoof for wearables: apps see a Google phone, so Pixel Watch and other watch apps can pair (attestation untouched) | GoogleSpoofForWear by 73sydney, built in | Picked features → Connected devices (restart to apply) |
 
 Plus **LineageOS 23.2 device tree support** (`vendor/lineage`, `lineage.dependencies`, LineageOS AIDL HAL sepolicy,
 LineageOS HAL compatibility matrix, LineageOS `wpa_supplicant_8` with Broadcom WPA3 support).
+
+## Updating (dirty flash)
+
+Builds can be flashed over each other without a wipe, as long as they are signed with the same keys
+and you don't switch between a build with and without Google apps. Sideload the new zip in recovery.
+
+Local builds keep the same build fingerprint, so Android can reuse stale cached app data and apps like
+Settings crash after the update. After the first boot, clear the package cache once:
+
+```shell
+adb root
+adb shell rm -rf /data/system/package_cache/*
+adb reboot
+```
 
 ## Be careful
 
@@ -112,11 +133,13 @@ LineageOS HAL compatibility matrix, LineageOS `wpa_supplicant_8` with Broadcom W
 - [Android Open Source Project](https://source.android.com)
 - [LineageOS](https://github.com/LineageOS): HALs, device-tree conventions, the `vendor/lineage` compatibility
 - [Infinity X](https://github.com/ProjectInfinity-X): status bar logo, battery bar
-- [AxionOS](https://github.com/AxionAOSP): burn-in protection, advanced restart with Restart SystemUI, flashlight fade, 5G tile
+- [AxionOS](https://github.com/AxionAOSP): AxionFx audio effects, burn-in protection, advanced restart with Restart SystemUI, flashlight fade, 5G tile, emoji style switch
 - [uwuAOSP](https://github.com/uwuAOSP): deep sleep info, auto brightness tile, full screen cutout apps
-- [Evolution X](https://github.com/Evolution-X): sleep mode, QS tile animations, custom carrier label, volume slider haptics switch
+- [Evolution X](https://github.com/Evolution-X): sleep mode, QS tile animations, custom carrier label, volume slider haptics switch, custom lockscreen clocks, fingerprint icons, emoji style switch
 - [Lunaris AOSP](https://github.com/Lunaris-AOSP): separate notifications/QS shade, landscape split shade switch, screenshot options
 - [OneUisland](https://github.com/csabaikende-ctrl/OneUisland) by Spottq, with additions by csabaikende-ctrl: the dynamic island (synced from that repository, not hosted in this org)
+- 73sydney: GoogleSpoofForWear (Magisk module), the idea behind the Google spoof for wearables toggle
+- Blobmoji (C1710, Apache 2.0), OpenMoji (HfG Schwäbisch Gmünd, CC BY-SA 4.0), Twemoji (Twitter and contributors, CC BY 4.0): the bundled emoji styles
 - [exy2100](https://github.com/exy2100) (ata-kaner, mst8981, Flopster101): Galaxy S21 Exynos device trees, kernel, vendor and Samsung/SLSI hardware forks
 - [Macktherealonereally](https://github.com/Macktherealonereally): Galaxy S21 Exynos fixes (VoLTE, eSIM, NFC, WPA3 hotspot, 60 fps video, charge limit) and the trees/kernel used here
 - ExtremeXT and everyone on Exynos AOSP
