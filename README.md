@@ -102,6 +102,7 @@ m systemimage
 | Emoji styles: Android, Blobmoji, OpenMoji, Twemoji, or your own emoji font (.ttf/.otf) | Evolution X / AxionOS | Picked features → Emoji style (restart to apply) |
 | System font picker (Miku's, now linked) | Miku UI | Picked features → Fonts |
 | AxionFx audio effects, with Miku-Picked's own Clarity, Dynamic System (bass) and Speaker optimization | AxionOS | AxionFx app, QS tile, or a music app's equalizer button |
+| Skip tracks with the volume keys while the screen is off (hold up = next, hold down = previous) | Miku-Picked UI (like LineageOS) | Picked features → Skip tracks with volume keys |
 | Now Bar: what's playing on the lock screen, with previous / play-pause / next | Miku-Picked UI (in the style of One UI) | Picked features → Now Bar |
 | Google spoof for wearables: apps see a Google phone, so Pixel Watch and other watch apps can pair (attestation untouched) | GoogleSpoofForWear by 73sydney, built in | Picked features → Connected devices (restart to apply) |
 
