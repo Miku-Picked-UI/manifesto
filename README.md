@@ -103,7 +103,7 @@ m systemimage
 | System font picker (Miku's, now linked) | Miku UI | Picked features → Fonts |
 | AxionFx audio effects, with Clarity, and ViPER4Android's Dynamic System (bass) and Speaker optimization | AxionOS, [ViPERFX_RE](https://github.com/AndroidAudioMods/ViPERFX_RE) | AxionFx app, QS tile, or a music app's equalizer button |
 | Skip tracks with the volume keys while the screen is off (hold up = next, hold down = previous) | Miku-Picked UI (like LineageOS) | Picked features → Skip tracks with volume keys |
-| Now Bar: what's playing on the lock screen, with previous / play-pause / next | Miku-Picked UI (in the style of One UI) | Picked features → Now Bar |
+| Now Bar: music (tap for a large player), flashlight, timers, calls and other live activities on the lock screen; liquid glass, frosted glass or black; placed around the fingerprint sensor | Miku-Picked UI (in the style of One UI) | Picked features → Now Bar |
 | Google spoof for wearables: apps see a Google phone, so Pixel Watch and other watch apps can pair (attestation untouched) | GoogleSpoofForWear by 73sydney, built in | Picked features → Connected devices (restart to apply) |
 
 Plus **LineageOS 23.2 device tree support** (`vendor/lineage`, `lineage.dependencies`, LineageOS AIDL HAL sepolicy,
