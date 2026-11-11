@@ -140,6 +140,7 @@ adb reboot
 - [Evolution X](https://github.com/Evolution-X): sleep mode, QS tile animations, custom carrier label, volume slider haptics switch, custom lockscreen clocks, fingerprint icons, emoji style switch
 - [Lunaris AOSP](https://github.com/Lunaris-AOSP): separate notifications/QS shade, landscape split shade switch, screenshot options
 - [OneUisland](https://github.com/csabaikende-ctrl/OneUisland) by Spottq, with additions by csabaikende-ctrl: the dynamic island (synced from that repository, not hosted in this org)
+- [PenguinOS](https://github.com/Project-PenguinOS) by redducc and Saikiran: Liquid Glass in SurfaceFlinger and SystemUI, backported to Android 16, used with permission
 - [ViPERFX_RE](https://github.com/AndroidAudioMods/ViPERFX_RE) by Iscle / AndroidAudioMods (via [WSTxda's fork](https://github.com/WSTxda/ViPERFX_RE)): ViPER4Android's Dynamic System and speaker correction in AxionFx, used with permission
 - 73sydney: GoogleSpoofForWear (Magisk module), the idea behind the Google spoof for wearables toggle
 - Blobmoji (C1710, Apache 2.0), OpenMoji (HfG Schwäbisch Gmünd, CC BY-SA 4.0), Twemoji (Twitter and contributors, CC BY 4.0): the bundled emoji styles
