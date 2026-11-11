@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Optional: PenguinOS' ColorOS animations and Liquid Glass glyphs from your own private repo.
+     Not part of Miku-Picked UI; without it SystemUI uses its own animations and Material
+     Symbols glyphs. Copy to .repo/local_manifests/ to use it; a private repo needs git
+     credentials for github.com (e.g. `gh auth setup-git`).
+-->
+<manifest>
+  <remote name="penguin-assets-extra" fetch="https://github.com/csabaikende-ctrl" />
+  <project path="vendor/penguin-assets-extra" name="penguin-assets-extra" remote="penguin-assets-extra" revision="main" />
+</manifest>
