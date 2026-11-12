@@ -67,6 +67,12 @@ Not included (optional in the upstream builds): OpenEUICC (eSIM), the krazey IMS
 Aurora Store. Without lineage-sdk there is no settings UI for LiveDisplay, charging control and
 wireless fast charging.
 
+Galaxy S21 specific:
+- **SIM 2 / eSIM:** SIM tray 2 and the eSIM share the second SIM slot. Pick which one it uses in
+  Settings → Network & internet → SIM 2 slot (Macktherealonereally's RIL slot switch).
+- **USB tethering** uses NCM. The kernel's NCM driver is fixed so tethering no longer stalls under
+  load (e.g. games on the tethered PC); RNDIS does not work with Linux hosts and is not used.
+
 GSI
 ---
 
@@ -94,6 +100,7 @@ m systemimage
 | Deep sleep time in uptime | uwuAOSP | Settings → About phone → Status |
 | Dynamic island: music, calls, timers, screen recording, flashlight, charging, notifications with reply, alerts; frosted or liquid glass cards | [OneUisland](https://github.com/csabaikende-ctrl/OneUisland) (built into SystemUI) | Picked features → Show dynamic island / Island settings |
 | Separate notifications and quick settings (left half / right half pull-down) | Lunaris AOSP | Picked features |
+| Switch between notifications and quick settings like One UI: pull down from the top edge on the other side, or swipe sideways; animated like One UI / ColorOS | Miku-Picked UI | automatic with separate notifications and quick settings |
 | Landscape split shade switch | Lunaris AOSP | Picked features |
 | Screenshot flash switch, hide status bar in screenshots | Lunaris AOSP | Picked features |
 | Volume slider haptics switch | Evolution X | Picked features |
@@ -104,7 +111,14 @@ m systemimage
 | AxionFx audio effects, with Clarity, and ViPER4Android's Dynamic System (bass) and Speaker optimization | AxionOS, [ViPERFX_RE](https://github.com/AndroidAudioMods/ViPERFX_RE) | AxionFx app, QS tile, or a music app's equalizer button |
 | Skip tracks with the volume keys while the screen is off (hold up = next, hold down = previous) | Miku-Picked UI (like LineageOS) | Picked features → Skip tracks with volume keys |
 | Now Bar: music (tap for a large player), flashlight, timers, calls and other live activities on the lock screen; liquid glass, frosted glass or black; placed around the fingerprint sensor | Miku-Picked UI (in the style of One UI) | Picked features → Now Bar |
-| System-wide Liquid Glass: SurfaceFlinger draws blurs as glass; glass Quick Settings tiles, PIN pad and notifications | PenguinOS (backported from Android 17, with permission) | Picked features → System-wide Liquid Glass |
+| System-wide Liquid Glass: SurfaceFlinger draws blurs as glass; glass Quick Settings tiles, squishy PIN keys and notifications; Liquid Glass glyphs and ColorOS tile animations | PenguinOS (backported from Android 17, with permission) | Picked features → System-wide Liquid Glass, Glass style (Liquid Glass / ColorOS) |
+| Liquid Glass brightness slider, and a media volume slider in Quick Settings | PenguinOS | Picked features → Volume slider in Quick Settings |
+| Liquid Glass tab bars in apps (floating capsule with liquid motion) | PenguinOS | Picked features → Liquid Glass tab bars in apps, Float tab bars over the page |
+| Liquid Glass buttons in apps (iOS 26 style glass capsules) | Miku-Picked UI | Picked features → Liquid Glass buttons in apps |
+| Adjustable shade blur strength | Miku-Picked UI | Picked features → Shade blur |
+| ColorOS app open/close animations (apps grow out of and close into their icon on springs) | PenguinOS | Picked features → ColorOS app animations |
+| The lockscreen clock flies onto a home screen clock widget on unlock | PenguinOS | Picked features → Clock flies home on unlock |
+| LTE only while tethering: keeps the modem off 5G while hotspot/USB/Bluetooth tethering is on (cooler, less battery), 5G comes back afterwards | Miku-Picked UI | Picked features → LTE only while tethering |
 | Google spoof for wearables: apps see a Google phone, so Pixel Watch and other watch apps can pair (attestation untouched) | GoogleSpoofForWear by 73sydney, built in | Picked features → Connected devices (restart to apply) |
 
 Plus **LineageOS 23.2 device tree support** (`vendor/lineage`, `lineage.dependencies`, LineageOS AIDL HAL sepolicy,
@@ -140,12 +154,12 @@ adb reboot
 - [Evolution X](https://github.com/Evolution-X): sleep mode, QS tile animations, custom carrier label, volume slider haptics switch, custom lockscreen clocks, fingerprint icons, emoji style switch
 - [Lunaris AOSP](https://github.com/Lunaris-AOSP): separate notifications/QS shade, landscape split shade switch, screenshot options
 - [OneUisland](https://github.com/csabaikende-ctrl/OneUisland) by Spottq, with additions by csabaikende-ctrl: the dynamic island (synced from that repository, not hosted in this org)
-- [PenguinOS](https://github.com/Project-PenguinOS) by redducc and Saikiran: Liquid Glass in SurfaceFlinger and SystemUI, backported to Android 16, used with permission
+- [PenguinOS](https://github.com/Project-PenguinOS) by redducc and Saikiran: Liquid Glass in SurfaceFlinger and SystemUI, glass tab bars in apps, Liquid Glass sliders, ColorOS app animations and tile animations, the lockscreen clock flight home; backported to Android 16, used with permission
 - [ViPERFX_RE](https://github.com/AndroidAudioMods/ViPERFX_RE) by Iscle / AndroidAudioMods (via [WSTxda's fork](https://github.com/WSTxda/ViPERFX_RE)): ViPER4Android's Dynamic System and speaker correction in AxionFx, used with permission
 - 73sydney: GoogleSpoofForWear (Magisk module), the idea behind the Google spoof for wearables toggle
 - Blobmoji (C1710, Apache 2.0), OpenMoji (HfG Schwäbisch Gmünd, CC BY-SA 4.0), Twemoji (Twitter and contributors, CC BY 4.0): the bundled emoji styles
 - [exy2100](https://github.com/exy2100) (ata-kaner, mst8981, Flopster101): Galaxy S21 Exynos device trees, kernel, vendor and Samsung/SLSI hardware forks
-- [Macktherealonereally](https://github.com/Macktherealonereally): Galaxy S21 Exynos fixes (VoLTE, eSIM, NFC, WPA3 hotspot, 60 fps video, charge limit) and the trees/kernel used here
+- [Macktherealonereally](https://github.com/Macktherealonereally): Galaxy S21 Exynos fixes (VoLTE, eSIM and the SIM 2 / eSIM slot switch, NFC, WPA3 hotspot, 60 fps video, charge limit) and the trees/kernel used here
 - ExtremeXT and everyone on Exynos AOSP
 - crDroid, AICP, OmniROM, PixelExperience and every project those features first came from
 - Every original author of a picked commit (authorship is kept in git history)
