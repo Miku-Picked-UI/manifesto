@@ -119,6 +119,7 @@ m systemimage
 | ColorOS app open/close animations (apps grow out of and close into their icon on springs) | PenguinOS | Picked features → ColorOS app animations |
 | The lockscreen clock flies onto a home screen clock widget on unlock | PenguinOS | Picked features → Clock flies home on unlock |
 | LTE only while tethering: keeps the modem off 5G while hotspot/USB/Bluetooth tethering is on (cooler, less battery), 5G comes back afterwards | Miku-Picked UI | Picked features → LTE only while tethering |
+| Screenshots: allow screenshots in secure apps (FLAG_SECURE off), hide screenshots from apps (no screenshot detection), and a screenshot detection tester | Miku-Picked UI (like BlassGO's FlagSecure Disabler, built into the framework) | Picked features → Screenshots |
 | Google spoof for wearables: apps see a Google phone, so Pixel Watch and other watch apps can pair (attestation untouched) | GoogleSpoofForWear by 73sydney, built in | Picked features → Connected devices (restart to apply) |
 
 Plus **LineageOS 23.2 device tree support** (`vendor/lineage`, `lineage.dependencies`, LineageOS AIDL HAL sepolicy,
