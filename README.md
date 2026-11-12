@@ -108,7 +108,7 @@ m systemimage
 | Fingerprint icon for in-display sensors | Evolution X | Picked features → Fingerprint icon |
 | Emoji styles: Android, Blobmoji, OpenMoji, Twemoji, or your own emoji font (.ttf/.otf) | Evolution X / AxionOS | Picked features → Emoji style (restart to apply) |
 | System font picker (Miku's, now linked) | Miku UI | Picked features → Fonts |
-| AxionFx audio effects, with Clarity, and ViPER4Android's Dynamic System (bass) and Speaker optimization | AxionOS, [ViPERFX_RE](https://github.com/AndroidAudioMods/ViPERFX_RE) | AxionFx app, QS tile, or a music app's equalizer button |
+| AxionFx audio effects, with ViPER4Android's Clarity (Natural, OZone+, X-HiFi), Dynamic System (bass) and Speaker optimization | AxionOS, [ViPERFX_RE](https://github.com/AndroidAudioMods/ViPERFX_RE) | AxionFx app, QS tile, or a music app's equalizer button |
 | Skip tracks with the volume keys while the screen is off (hold up = next, hold down = previous) | Miku-Picked UI (like LineageOS) | Picked features → Skip tracks with volume keys |
 | Now Bar: music (tap for a large player), flashlight, timers, calls and other live activities on the lock screen; liquid glass, frosted glass or black; placed around the fingerprint sensor | Miku-Picked UI (in the style of One UI) | Picked features → Now Bar |
 | System-wide Liquid Glass: SurfaceFlinger draws blurs as glass; glass Quick Settings tiles, squishy PIN keys and notifications; Liquid Glass glyphs and ColorOS tile animations | PenguinOS (backported from Android 17, with permission) | Picked features → System-wide Liquid Glass, Glass style (Liquid Glass / ColorOS) |
@@ -155,7 +155,7 @@ adb reboot
 - [Lunaris AOSP](https://github.com/Lunaris-AOSP): separate notifications/QS shade, landscape split shade switch, screenshot options
 - [OneUisland](https://github.com/csabaikende-ctrl/OneUisland) by Spottq, with additions by csabaikende-ctrl: the dynamic island (synced from that repository, not hosted in this org)
 - [PenguinOS](https://github.com/Project-PenguinOS) by redducc and Saikiran: Liquid Glass in SurfaceFlinger and SystemUI, glass tab bars in apps, Liquid Glass sliders, ColorOS app animations and tile animations, the lockscreen clock flight home; backported to Android 16, used with permission
-- [ViPERFX_RE](https://github.com/AndroidAudioMods/ViPERFX_RE) by Iscle / AndroidAudioMods (via [WSTxda's fork](https://github.com/WSTxda/ViPERFX_RE)): ViPER4Android's Dynamic System and speaker correction in AxionFx, used with permission
+- [ViPERFX_RE](https://github.com/AndroidAudioMods/ViPERFX_RE) by Iscle / AndroidAudioMods (via [WSTxda's fork](https://github.com/WSTxda/ViPERFX_RE)): ViPER4Android's Clarity, Dynamic System and speaker correction in AxionFx, used with permission
 - 73sydney: GoogleSpoofForWear (Magisk module), the idea behind the Google spoof for wearables toggle
 - Blobmoji (C1710, Apache 2.0), OpenMoji (HfG Schwäbisch Gmünd, CC BY-SA 4.0), Twemoji (Twitter and contributors, CC BY 4.0): the bundled emoji styles
 - [exy2100](https://github.com/exy2100) (ata-kaner, mst8981, Flopster101): Galaxy S21 Exynos device trees, kernel, vendor and Samsung/SLSI hardware forks
