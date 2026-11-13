@@ -109,6 +109,7 @@ m systemimage
 | Emoji styles: Android, Blobmoji, OpenMoji, Twemoji, or your own emoji font (.ttf/.otf) | Evolution X / AxionOS | Picked features → Emoji style (restart to apply) |
 | System font picker (Miku's, now linked) | Miku UI | Picked features → Fonts |
 | AxionFx audio effects, with ViPER4Android's Clarity (Natural, OZone+, X-HiFi), Dynamic System (bass) and Speaker optimization | AxionOS, [ViPERFX_RE](https://github.com/AndroidAudioMods/ViPERFX_RE) | AxionFx app, QS tile, or a music app's equalizer button |
+| Resizable home screen folders: long-press a folder and drag the corner handle to any size that fits (2x1, 2x2, 4x2…); bigger folders show more apps, and tapping one opens it directly | AxionOS | Long-press a folder on the home screen |
 | Skip tracks with the volume keys while the screen is off (hold up = next, hold down = previous) | Miku-Picked UI (like LineageOS) | Picked features → Skip tracks with volume keys |
 | Now Bar: music (tap for a large player), flashlight, timers, calls and other live activities on the lock screen; liquid glass, frosted glass or black; placed around the fingerprint sensor | Miku-Picked UI (in the style of One UI) | Picked features → Now Bar |
 | System-wide Liquid Glass: SurfaceFlinger draws blurs as glass; glass Quick Settings tiles, squishy PIN keys and notifications; Liquid Glass glyphs and ColorOS tile animations | PenguinOS (backported from Android 17, with permission) | Picked features → System-wide Liquid Glass, Glass style (Liquid Glass / ColorOS) |
@@ -150,7 +151,7 @@ adb reboot
 - [Android Open Source Project](https://source.android.com)
 - [LineageOS](https://github.com/LineageOS): HALs, device-tree conventions, the `vendor/lineage` compatibility
 - [Infinity X](https://github.com/ProjectInfinity-X): status bar logo, battery bar
-- [AxionOS](https://github.com/AxionAOSP): AxionFx audio effects, burn-in protection, advanced restart with Restart SystemUI, flashlight fade, 5G tile, emoji style switch
+- [AxionOS](https://github.com/AxionAOSP): AxionFx audio effects, resizable home screen folders (Localhorst04, Saikrishna1504, rmp22), burn-in protection, advanced restart with Restart SystemUI, flashlight fade, 5G tile, emoji style switch
 - [uwuAOSP](https://github.com/uwuAOSP): deep sleep info, auto brightness tile, full screen cutout apps
 - [Evolution X](https://github.com/Evolution-X): sleep mode, QS tile animations, custom carrier label, volume slider haptics switch, custom lockscreen clocks, fingerprint icons, emoji style switch
 - [Lunaris AOSP](https://github.com/Lunaris-AOSP): separate notifications/QS shade, landscape split shade switch, screenshot options
