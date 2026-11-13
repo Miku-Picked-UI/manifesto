@@ -116,6 +116,8 @@ m systemimage
 | Liquid Glass brightness slider, and a media volume slider in Quick Settings | PenguinOS | Picked features → Volume slider in Quick Settings |
 | Liquid Glass tab bars in apps (floating capsule with liquid motion) | PenguinOS | Picked features → Liquid Glass tab bars in apps, Float tab bars over the page |
 | Volume panel styles: One UI (floating card, centres with every slider when expanded), MyUI (frosted card), ColorOS (glass column that slims to the edge), Expandable (a slider per stream) | PenguinOS | Picked features → Volume panel style |
+| Liquid Glass back gesture arrow | Miku-Picked UI (PenguinOS' glass) | automatic with System-wide Liquid Glass |
+| Lockscreen charging info: live current, power, voltage and battery temperature under the charging text | Evolution X / AxionOS | Picked features → Charging info on the lockscreen |
 | Liquid Glass buttons in apps (iOS 26 style glass capsules) | Miku-Picked UI | Picked features → Liquid Glass buttons in apps |
 | Adjustable shade blur strength | Miku-Picked UI | Picked features → Shade blur |
 | ColorOS app open/close animations (apps grow out of and close into their icon on springs) | PenguinOS | Picked features → ColorOS app animations |
