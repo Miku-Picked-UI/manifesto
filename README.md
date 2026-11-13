@@ -115,6 +115,7 @@ m systemimage
 | System-wide Liquid Glass: SurfaceFlinger draws blurs as glass; glass Quick Settings tiles, squishy PIN keys and notifications; Liquid Glass glyphs and ColorOS tile animations | PenguinOS (backported from Android 17, with permission) | Picked features → System-wide Liquid Glass, Glass style (Liquid Glass / ColorOS) |
 | Liquid Glass brightness slider, and a media volume slider in Quick Settings | PenguinOS | Picked features → Volume slider in Quick Settings |
 | Liquid Glass tab bars in apps (floating capsule with liquid motion) | PenguinOS | Picked features → Liquid Glass tab bars in apps, Float tab bars over the page |
+| Volume panel styles: One UI (floating card, centres with every slider when expanded), MyUI (frosted card), ColorOS (glass column that slims to the edge), Expandable (a slider per stream) | PenguinOS | Picked features → Volume panel style |
 | Liquid Glass buttons in apps (iOS 26 style glass capsules) | Miku-Picked UI | Picked features → Liquid Glass buttons in apps |
 | Adjustable shade blur strength | Miku-Picked UI | Picked features → Shade blur |
 | ColorOS app open/close animations (apps grow out of and close into their icon on springs) | PenguinOS | Picked features → ColorOS app animations |
@@ -156,7 +157,7 @@ adb reboot
 - [Evolution X](https://github.com/Evolution-X): sleep mode, QS tile animations, custom carrier label, volume slider haptics switch, custom lockscreen clocks, fingerprint icons, emoji style switch
 - [Lunaris AOSP](https://github.com/Lunaris-AOSP): separate notifications/QS shade, landscape split shade switch, screenshot options
 - [OneUisland](https://github.com/csabaikende-ctrl/OneUisland) by Spottq, with additions by csabaikende-ctrl: the dynamic island (synced from that repository, not hosted in this org)
-- [PenguinOS](https://github.com/Project-PenguinOS) by redducc and Saikiran: Liquid Glass in SurfaceFlinger and SystemUI, glass tab bars in apps, Liquid Glass sliders, ColorOS app animations and tile animations, the lockscreen clock flight home; backported to Android 16, used with permission
+- [PenguinOS](https://github.com/Project-PenguinOS) by redducc and Saikiran: Liquid Glass in SurfaceFlinger and SystemUI, glass tab bars in apps, Liquid Glass sliders, ColorOS app animations and tile animations, the lockscreen clock flight home, volume panel styles; backported to Android 16, used with permission
 - [ViPERFX_RE](https://github.com/AndroidAudioMods/ViPERFX_RE) by Iscle / AndroidAudioMods (via [WSTxda's fork](https://github.com/WSTxda/ViPERFX_RE)): ViPER4Android's Clarity, Dynamic System and speaker correction in AxionFx, used with permission
 - 73sydney: GoogleSpoofForWear (Magisk module), the idea behind the Google spoof for wearables toggle
 - Blobmoji (C1710, Apache 2.0), OpenMoji (HfG Schwäbisch Gmünd, CC BY-SA 4.0), Twemoji (Twitter and contributors, CC BY 4.0): the bundled emoji styles
