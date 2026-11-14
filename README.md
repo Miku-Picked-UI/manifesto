@@ -126,6 +126,9 @@ m systemimage
 | LTE only while tethering: keeps the modem off 5G while hotspot/USB/Bluetooth tethering is on (cooler, less battery), 5G comes back afterwards | Miku-Picked UI | Picked features → LTE only while tethering |
 | Screenshots: allow screenshots in secure apps (FLAG_SECURE off), hide screenshots from apps (no screenshot detection), and a screenshot detection tester | Miku-Picked UI (like BlassGO's FlagSecure Disabler, built into the framework) | Picked features → Screenshots |
 | Google spoof for wearables: apps see a Google phone, so Pixel Watch and other watch apps can pair (attestation untouched) | GoogleSpoofForWear by 73sydney, built in | Picked features → Connected devices (restart to apply) |
+| Smoother, cooler games: Fortnite and other listed games get Android's game power mode and ride just below the hottest CPU/GPU clocks, so thermal throttling stops causing stutter | Miku-Picked UI | automatic in games (lifted by the Performance profile) |
+| Play Integrity: a certified Pixel fingerprint for Google Play services (kept current automatically or imported), keystore attestation signed with your imported keybox (TrickyStore), and a bootloader every app sees as locked | Evolution X / AxionOS | Picked features → Play Integrity |
+| Status bar lyrics for Spotify: synced lyrics fetched from lrclib scroll in the status bar while Spotify plays | Miku-Picked UI (lyrics from [lrclib.net](https://lrclib.net)) | automatic with Status bar lyrics |
 
 Plus **LineageOS 23.2 device tree support** (`vendor/lineage`, `lineage.dependencies`, LineageOS AIDL HAL sepolicy,
 LineageOS HAL compatibility matrix, LineageOS `wpa_supplicant_8` with Broadcom WPA3 support).
@@ -157,7 +160,8 @@ adb reboot
 - [Infinity X](https://github.com/ProjectInfinity-X): status bar logo, battery bar
 - [AxionOS](https://github.com/AxionAOSP): AxionFx audio effects, resizable home screen folders (Localhorst04, Saikrishna1504, rmp22), burn-in protection, advanced restart with Restart SystemUI, flashlight fade, 5G tile, emoji style switch
 - [uwuAOSP](https://github.com/uwuAOSP): deep sleep info, auto brightness tile, full screen cutout apps
-- [Evolution X](https://github.com/Evolution-X): sleep mode, QS tile animations, custom carrier label, volume slider haptics switch, custom lockscreen clocks, fingerprint icons, emoji style switch
+- [Evolution X](https://github.com/Evolution-X): sleep mode, QS tile animations, custom carrier label, volume slider haptics switch, custom lockscreen clocks, fingerprint icons, emoji style switch, Play Integrity Fix and TrickyStore (originally AxionOS; the Pixel fingerprint, keystore attestation and bootloader spoof)
+- [lrclib.net](https://lrclib.net): the free synced-lyrics service behind status bar lyrics for Spotify
 - [Lunaris AOSP](https://github.com/Lunaris-AOSP): separate notifications/QS shade, landscape split shade switch, screenshot options
 - [OneUisland](https://github.com/csabaikende-ctrl/OneUisland) by Spottq, with additions by csabaikende-ctrl: the dynamic island (synced from that repository, not hosted in this org)
 - [PenguinOS](https://github.com/Project-PenguinOS) by redducc and Saikiran: Liquid Glass in SurfaceFlinger and SystemUI, glass tab bars in apps, Liquid Glass sliders, ColorOS app animations and tile animations, the lockscreen clock flight home, volume panel styles; backported to Android 16, used with permission
