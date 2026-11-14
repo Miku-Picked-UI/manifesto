@@ -118,6 +118,7 @@ m systemimage
 | Volume panel styles: One UI (floating card, centres with every slider when expanded), MyUI (frosted card), ColorOS (glass column that slims to the edge), Expandable (a slider per stream) | PenguinOS | Picked features → Volume panel style |
 | Liquid Glass back gesture arrow | Miku-Picked UI (PenguinOS' glass) | automatic with System-wide Liquid Glass |
 | Lockscreen charging info: live current, power, voltage and battery temperature under the charging text | Evolution X / AxionOS | Picked features → Charging info on the lockscreen |
+| GPU driver switch (Galaxy S21 / Exynos 2100): Mali r38p0 (stock), r38p1, r44p1, r49p1, r54p1 or r54p3; the kernel and userspace drivers switch together on restart, and SBWC video decoding turns off for r44p1 and newer | [FlopKernel](https://github.com/FlopKernel-Series) (kernel drivers, selector), [Exynos_Valhall_GPUDriver](https://github.com/Flopster101/Exynos_Valhall_GPUDriver) (userspace) | Picked features → GPU driver |
 | Liquid Glass buttons in apps (iOS 26 style glass capsules) | Miku-Picked UI | Picked features → Liquid Glass buttons in apps |
 | Adjustable shade blur strength | Miku-Picked UI | Picked features → Shade blur |
 | ColorOS app open/close animations (apps grow out of and close into their icon on springs) | PenguinOS | Picked features → ColorOS app animations |
@@ -160,6 +161,7 @@ adb reboot
 - [Lunaris AOSP](https://github.com/Lunaris-AOSP): separate notifications/QS shade, landscape split shade switch, screenshot options
 - [OneUisland](https://github.com/csabaikende-ctrl/OneUisland) by Spottq, with additions by csabaikende-ctrl: the dynamic island (synced from that repository, not hosted in this org)
 - [PenguinOS](https://github.com/Project-PenguinOS) by redducc and Saikiran: Liquid Glass in SurfaceFlinger and SystemUI, glass tab bars in apps, Liquid Glass sliders, ColorOS app animations and tile animations, the lockscreen clock flight home, volume panel styles; backported to Android 16, used with permission
+- [FlopKernel](https://github.com/FlopKernel-Series) by Flopster101: the selectable Mali kernel drivers and their selector, the SBWC switch, FloppyCompanion's boot image patching; [Exynos_Valhall_GPUDriver](https://github.com/Flopster101/Exynos_Valhall_GPUDriver): the Mali userspace drivers and stable-C shim
 - [ViPERFX_RE](https://github.com/AndroidAudioMods/ViPERFX_RE) by Iscle / AndroidAudioMods (via [WSTxda's fork](https://github.com/WSTxda/ViPERFX_RE)): ViPER4Android's Clarity, Dynamic System and speaker correction in AxionFx, used with permission
 - 73sydney: GoogleSpoofForWear (Magisk module), the idea behind the Google spoof for wearables toggle
 - Blobmoji (C1710, Apache 2.0), OpenMoji (HfG Schwäbisch Gmünd, CC BY-SA 4.0), Twemoji (Twitter and contributors, CC BY 4.0): the bundled emoji styles
