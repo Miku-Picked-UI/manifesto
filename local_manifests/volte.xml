@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  VoLTE / VoWiFi / SMS-over-IMS for o1s (and the other Exynos 2100 S21 models),
+  using krazey's open-source IMS stack (ImsStack + ImsMedia + CarrierSettings,
+  Android 17 code in Android 16 QPR2 compatibility mode) - the same design
+  LineageOS 24.0 ships as hardware/lineage/generic-ims.
+
+  This is OPTIONAL: device/samsung/universal2100-common/ims/ims.mk builds the
+  stack only when these repos are present, so the tree still builds without it.
+  Everything else VoLTE needs is already in the device tree:
+    - the libsec-ril SMSC shim (device .../shims/libsec-ril), wired in common.mk,
+      which SMS-over-IMS needs (RP-DATA requires a valid SMSC);
+    - the IMS overlays (config_ims_mmtel_package=com.android.imsstack, VoLTE/WFC
+      available, IPsec algorithms);
+    - per-carrier enablement in ims/overlays/CarrierConfigOverlayIms - the
+      generated vendor.xml already turns carrier_volte_available_bool on for
+      Magyar Telekom (216-30), Yettel (216-01), Vodafone (216-70), DIGI (216-03)
+      and ~720 other carriers (see ims/carrier_config/volte_carriers.tsv).
+
+  To use it:
+    cp .repo/manifests/local_manifests/volte.xml .repo/local_manifests/
+    repo sync -c -j$(nproc)
+  then build as usual. After flashing, turn on Settings > Network > SIM > VoLTE
+  (Enhanced 4G LTE). Verify with:
+    adb shell dumpsys carrier_config | grep carrier_volte_available_bool
+    adb logcat -b radio -s ImsStack ImsManager ImsPhone
+
+  Revisions are pinned to Macktherealonereally's verified lineage-23.2 build
+  (galaxy-s21-exynos-lineageos-fixes). eSIM (OpenEUICC) is separate and not
+  included here.
+-->
+<manifest>
+
+  <remote name="krazey" fetch="https://github.com/krazey" />
+
+  <!-- krazey's ImsMedia replaces AOSP's at the same path (AOSP's has no
+       sepolicy/, which is how ims.mk tells them apart). -->
+  <remove-project name="platform/packages/modules/ImsMedia" optional="true" />
+
+  <project path="packages/modules/ImsMedia" name="ImsMedia" remote="krazey"
+           revision="cb1dd74e9d5e7b7693dfc5870037607eb58d8ea3" />
+  <project path="packages/modules/ImsStack" name="ImsStack" remote="krazey"
+           revision="5ff784d265a94b8227f8fcc93bf915f7635283f0" />
+  <project path="packages/apps/CarrierSettings" name="CarrierSettings" remote="krazey"
+           revision="2d00ce6100921547482bb3ecda690ec346d64be2" />
+
+</manifest>
