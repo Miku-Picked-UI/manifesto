@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     ColorCC Quick Settings style (by Guest), from your own private repo: the panel's code,
+     recovered from the ColorCC release APK and ported with the author's permission. Needed by
+     frameworks/base branch qs-control-centre (SystemUI links ColorCC-panel); picked-16 builds
+     without it. Copy to .repo/local_manifests/ to use it; a private repo needs git credentials
+     for github.com (e.g. `gh auth setup-git`).
+-->
+<manifest>
+  <remote name="colorcc" fetch="https://github.com/csabaikende-ctrl" />
+  <project path="vendor/colorcc" name="ColorCC-src" remote="colorcc" revision="main" />
+</manifest>
