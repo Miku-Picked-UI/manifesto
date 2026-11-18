@@ -2,12 +2,11 @@
 <!--
      Control Centre Quick Settings styles: frameworks/base from branch qs-control-centre, which
      adds PenguinOS' Control Centre and the ColorCC panel to SystemUI on top of picked-16.
-     Use it together with colorcc.xml (SystemUI links ColorCC-panel from vendor/colorcc, a
-     private repo, so github.com needs git credentials, e.g. `gh auth setup-git`):
+     SystemUI links ColorCC-panel from vendor/miku/colorcc, which is already synced, so this
+     manifest is all that is needed:
 
        mkdir -p .repo/local_manifests
        cp .repo/manifests/local_manifests/qs-control-centre.xml .repo/local_manifests/
-       cp .repo/manifests/local_manifests/colorcc.xml           .repo/local_manifests/
        repo sync -c -j$(nproc)
 -->
 <manifest>

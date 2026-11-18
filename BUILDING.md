@@ -78,13 +78,12 @@ mkdir -p .repo/local_manifests
 cp .repo/manifests/local_manifests/o1s.xml .repo/local_manifests/
 ```
 
-**Optional: Control Centre Quick Settings styles** (PenguinOS' Control Centre and ColorCC). Add
-both of these too; `colorcc.xml` is a private repo, so authenticate git for github.com first
-(e.g. `gh auth setup-git`):
+**Optional: Control Centre Quick Settings styles** (PenguinOS' Control Centre and ColorCC).
+Add this to switch SystemUI to the `qs-control-centre` branch; the ColorCC panel source is in
+`vendor/miku/colorcc` (already synced), so nothing private is needed:
 
 ```shell
 cp .repo/manifests/local_manifests/qs-control-centre.xml .repo/local_manifests/
-cp .repo/manifests/local_manifests/colorcc.xml           .repo/local_manifests/
 ```
 
 Then sync (the first sync takes a long time):
