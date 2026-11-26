@@ -134,6 +134,30 @@ m systemimage
 | Lockscreen app widgets: real widgets from your apps under the lockscreen clock; long-press to resize, move or remove | Lunaris AOSP (Ghosuto), based on AxionOS | Picked features → Display → Lockscreen widgets |
 | Pocket mode: in a pocket or bag the screen ignores key wakes and touches (proximity sensor); hold power to dismiss | Evolution X (pocket judge by Carlo Savignano) | Picked features → Power → Pocket mode |
 | Longer battery life: the UI is boosted only while you touch or open an app (no longer the whole time the screen is on), the memory bus can reach its lowest speed, and the launcher's shake sensor and the lyric ticker no longer run in the background | Miku-Picked UI | automatic |
+| Quick Settings styles: Stock, PenguinOS Control Centre, ColorCC (ColorOS-style control centre) and One UI | PenguinOS, [ColorCC](https://github.com/addictedcaf/ColorCC) (with permission) | Picked features → Look & feel → Quick Settings style |
+| Penguin Laboratory: edge lighting, iOS-style power menu, back-to-app indicator, glass dual tone, Luminous animations, floating depth wallpaper, lock icon on top, screen-off fingerprint icon, iOS-style lockscreen media art and motion art, frequent apps in recents | PenguinOS (with permission) | Picked features → Penguin Laboratory |
+| DeX-style desktop on an external display (USB-C monitor): taskbar, Launchpad, windowed apps, mouse and touchpad | PenguinOS (PenguinDex, with permission) | Picked features → Penguin Laboratory → DeX, then restart |
+| Glass Layer: live glass toasts, system dialogs, power menu, volume dialog, status bar chips, lockscreen shortcuts, Settings cards and installer dialogs; Liquid Glass sliders and switches whose thumb swells into a lens, wobbles as it moves and springs back; glass buttons that light up under your finger | [Glass Layer](https://github.com/Mahmud0808/GlassLayer) by DrDisagree (GPL-3.0), ported natively | Picked features → Look & feel → Glass Layer |
+| Unlock animations: burst, rings, shockwave, water (the screen ripples like water from the fingerprint sensor) or none | Miku-Picked UI, water from Glass Layer | Picked features → Lockscreen & wallpaper → Unlock animation |
+| Charging animations on the lockscreen: liquid, ring, wave or water, with live power and time to full | Miku-Picked UI, water from Glass Layer | Picked features → Charging → Charging animation |
+| Charging control: stop at a limit, or hold 80 % and top up in time for an alarm or a set time | Miku-Picked UI (LineageOS health HAL) | Picked features → Charging → Charging control |
+| Fast wireless charging and Wireless PowerShare switches, PowerShare QS tile (also while plugged into a 5 V charger) | Miku-Picked UI | Picked features → Charging |
+| Battery health page: capacity, cycles, temperature and the Samsung battery protection cap | Miku-Picked UI | Picked features → Charging → Battery health |
+| Boot animations: pulse, orbit, glitch, or your own zip, GIF or video | Miku-Picked UI | Picked features → Lockscreen & wallpaper → Boot animation |
+| Depth wallpaper: the lockscreen clock sits behind the subject of your photo, cut out automatically on the phone (or bring your own cut-out) | Miku-Picked UI (rembg u2netp model on ONNX Runtime) | Picked features → Lockscreen & wallpaper → Depth wallpaper |
+| Lockscreen media art background (blurred album art) and a music visualizer | Miku-Picked UI | Picked features → Lockscreen & wallpaper → Media art background, Music visualizer |
+| Full-screen lyrics: synced lyrics for whatever is playing (Spotify included) over the blurred album art, coloured after it; tap a line to jump there; also on the lockscreen | Miku-Picked UI (lyrics from [lrclib.net](https://lrclib.net)) | lyrics button on the Now Bar |
+| Reactive wallpaper: a live wallpaper that responds to touch and unlock | Miku-Picked UI | Picked features → Lockscreen & wallpaper → Reactive wallpaper |
+| Weather for the lockscreen clocks (Open-Meteo, no account) | Miku-Picked UI | Picked features → Lockscreen & wallpaper → Weather |
+| Per-app refresh rate, and a global cap (60 / 90 / 48 Hz) | Miku-Picked UI | Picked features → Display → Per-app refresh rate |
+| Per-app volume and separate app sound (play one app on another output) | Miku-Picked UI | Picked features → Sound → Per-app audio |
+| Clipboard history with a QS tile | Miku-Picked UI | Picked features → Screenshots → Clipboard history |
+| Per-app firewall (block mobile data or all networks per app) and a hosts-based ad blocker | Miku-Picked UI | Picked features → Network & privacy → Network firewall, Ad blocker |
+| 5G off while the screen is off (LTE only), back on when it turns on | Miku-Picked UI | Picked features → Network & privacy → Save power with the screen off |
+| Bubbles for any app | Miku-Picked UI | automatic (any app's notification can become a bubble) |
+| Notification sound with the screen on, 4G instead of LTE icon, less boring heads-up, screenshot sound, status bar brightness control (slide along the status bar) | Evolution X / Lunaris AOSP / Miku-Picked UI | Picked features → Status bar, Sound, Screenshots |
+| AirPods: noise control, conversation awareness, ear detection, personalized volume, microphone and per-bud battery in Bluetooth device details, and an AirPods QS tile | Miku-Picked UI (PickedPods, protocol from [LibrePods](https://github.com/librepods-org/librepods), GPL-3.0) | Settings → Connected devices → your AirPods; Quick Settings edit mode |
+| System update from the phone: pick a ROM zip, it's checked, verified and installed through recovery, no computer needed | Miku-Picked UI | Settings → System → System update |
 
 Plus **LineageOS 23.2 device tree support** (`vendor/lineage`, `lineage.dependencies`, LineageOS AIDL HAL sepolicy,
 LineageOS HAL compatibility matrix, LineageOS `wpa_supplicant_8` with Broadcom WPA3 support).
@@ -141,10 +165,19 @@ LineageOS HAL compatibility matrix, LineageOS `wpa_supplicant_8` with Broadcom W
 ## Updating (dirty flash)
 
 Builds can be flashed over each other without a wipe, as long as they are signed with the same keys
-and you don't switch between a build with and without Google apps. Sideload the new zip in recovery.
+and you don't switch between a build with and without Google apps.
 
-Local builds keep the same build fingerprint, so Android can reuse stale cached app data and apps like
-Settings crash after the update. After the first boot, clear the package cache once:
+- **From the phone (builds from 26 November 2026 on):** Settings → System → System update → Choose
+  update zip → Install and reboot. The zip is checked against the phone and the installed build,
+  its signature verified, and recovery installs it. If Settings' System update row opens a chooser
+  (Play services has a page of its own), use [MikuUpdater.apk](https://github.com/Miku-Picked-UI/manifesto/releases),
+  a tiny app that opens the updater directly.
+- **From recovery:** sideload the zip (`adb sideload`), or with no computer, copy it to a USB-C
+  flash drive (FAT32 or exFAT) and use Apply update → USB in recovery.
+
+Local builds keep the same build fingerprint. Builds from 26 November 2026 on clear Android's package
+cache by themselves when a different build boots; on older builds, clear it once after the first
+boot, or apps like Settings can crash:
 
 ```shell
 adb root
@@ -169,7 +202,10 @@ adb reboot
 - [lrclib.net](https://lrclib.net): the free synced-lyrics service behind status bar lyrics for Spotify
 - [Lunaris AOSP](https://github.com/Lunaris-AOSP): separate notifications/QS shade, landscape split shade switch, screenshot options, Edge Aurora and lockscreen app widgets (Ghosuto), performance overlay
 - [OneUisland](https://github.com/csabaikende-ctrl/OneUisland) by Spottq, with additions by csabaikende-ctrl: the dynamic island (synced from that repository, not hosted in this org)
-- [PenguinOS](https://github.com/Project-PenguinOS) by redducc and Saikiran: Liquid Glass in SurfaceFlinger and SystemUI, glass tab bars in apps, Liquid Glass sliders, ColorOS app animations and tile animations, the lockscreen clock flight home, volume panel styles; backported to Android 16, used with permission
+- [PenguinOS](https://github.com/Project-PenguinOS) by redducc and Saikiran: Liquid Glass in SurfaceFlinger and SystemUI, glass tab bars in apps, Liquid Glass sliders, ColorOS app animations and tile animations, the lockscreen clock flight home, volume panel styles, the Control Centre, Penguin Laboratory and PenguinDex; backported to Android 16, used with permission
+- [Glass Layer](https://github.com/Mahmud0808/GlassLayer) by DrDisagree (GPL-3.0): glass toasts, dialogs, power menu, volume, status bar chips, lockscreen shortcuts, sliders, switches, buttons, Settings cards, installer dialogs and the water ripple, ported natively; its lens builds on Kyant's [AndroidLiquidGlass](https://github.com/Kyant0/AndroidLiquidGlass)
+- [ColorCC](https://github.com/addictedcaf/ColorCC) by gtsw1: the ColorOS-style control centre, used with permission
+- [LibrePods](https://github.com/librepods-org/librepods): the AirPods protocol behind PickedPods (GPL-3.0)
 - [FlopKernel](https://github.com/FlopKernel-Series) by Flopster101: the selectable Mali kernel drivers and their selector, the SBWC switch, FloppyCompanion's boot image patching; [Exynos_Valhall_GPUDriver](https://github.com/Flopster101/Exynos_Valhall_GPUDriver): the Mali userspace drivers and stable-C shim
 - [ViPERFX_RE](https://github.com/AndroidAudioMods/ViPERFX_RE) by Iscle / AndroidAudioMods (via [WSTxda's fork](https://github.com/WSTxda/ViPERFX_RE)): ViPER4Android's Clarity, Dynamic System and speaker correction in AxionFx, used with permission
 - 73sydney: GoogleSpoofForWear (Magisk module), the idea behind the Google spoof for wearables toggle
