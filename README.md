@@ -169,9 +169,7 @@ and you don't switch between a build with and without Google apps.
 
 - **From the phone (builds from 26 November 2026 on):** Settings → System → System update → Choose
   update zip → Install and reboot. The zip is checked against the phone and the installed build,
-  its signature verified, and recovery installs it. If Settings' System update row opens a chooser
-  (Play services has a page of its own), use [MikuUpdater.apk](https://github.com/Miku-Picked-UI/manifesto/releases),
-  a tiny app that opens the updater directly.
+  its signature verified, and recovery installs it.
 - **From recovery:** sideload the zip (`adb sideload`), or with no computer, copy it to a USB-C
   flash drive (FAT32 or exFAT) and use Apply update → USB in recovery.
 
