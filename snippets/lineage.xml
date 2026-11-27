@@ -38,7 +38,8 @@
   <project path="vendor/qcom/opensource/wfd-commonsys" name="android_vendor_qcom_opensource_wfd-commonsys" groups="qcom,pdk-qcom" remote="lineage" />
 
   <!-- Packages -->
-  <project path="packages/apps/Aperture" name="android_packages_apps_Aperture" remote="lineage" />
+  <!-- Miku-Picked UI: LineageOS Aperture with Liquid Glass UI and One UI-style lens pills -->
+  <project path="packages/apps/Aperture" name="android_packages_apps_Aperture" remote="miku" />
   <project path="packages/apps/AudioFX" name="android_packages_apps_AudioFX" remote="lineage" />
   <project path="packages/resources/devicesettings" name="android_packages_resources_devicesettings" remote="lineage" />
   
