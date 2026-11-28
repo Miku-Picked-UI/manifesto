@@ -72,6 +72,12 @@ Galaxy S21 specific:
   Settings → Network & internet → SIM 2 slot (Macktherealonereally's RIL slot switch).
 - **USB tethering** uses NCM. The kernel's NCM driver is fixed so tethering no longer stalls under
   load (e.g. games on the tethered PC); RNDIS does not work with Linux hosts and is not used.
+- **Thermal management:** a battery-backed `SKIN` thermal sensor provides real thermal headroom to
+  games and display clamping, throttles/pauses charging (`siop_level`) at 39–41 °C before smoothly
+  stepping CPU/GPU clocks at 43 °C and 46 °C, and uses `coarse_demand` for Mali `r54p1` power policy.
+- **Offline charging:** `vendor.charger` now holds `WAKE_ALARM` and `BLOCK_SUSPEND` (and honours
+  `ro.charger.enable_suspend`), fixing slow charging animation updates and long power-button holds
+  when powering on while plugged in.
 
 GSI
 ---
@@ -158,6 +164,7 @@ m systemimage
 | Notification sound with the screen on, 4G instead of LTE icon, less boring heads-up, screenshot sound, status bar brightness control (slide along the status bar) | Evolution X / Lunaris AOSP / Miku-Picked UI | Picked features → Status bar, Sound, Screenshots |
 | AirPods: noise control, conversation awareness, ear detection, personalized volume, microphone and per-bud battery in Bluetooth device details, and an AirPods QS tile | Miku-Picked UI (PickedPods, protocol from [LibrePods](https://github.com/librepods-org/librepods), GPL-3.0) | Settings → Connected devices → your AirPods; Quick Settings edit mode |
 | System update from the phone: pick a ROM zip, it's checked, verified and installed through recovery, no computer needed | Miku-Picked UI | Settings → System → System update |
+| Miku-inspired offline charging animation: 60-frame AMOLED Miku-teal energy ring, vocaloid equalizer bars, orbiting magenta twin-tail ribbons and matching low-battery icon | Miku-Picked UI | automatic while powered off and charging |
 
 Plus **LineageOS 23.2 device tree support** (`vendor/lineage`, `lineage.dependencies`, LineageOS AIDL HAL sepolicy,
 LineageOS HAL compatibility matrix, LineageOS `wpa_supplicant_8` with Broadcom WPA3 support).
